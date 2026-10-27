@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "name": "白紫龙娘·简约版",
+  "spriteVersion": 2,
+  "sprite": {
+    "src": "./spritesheet.png",
+    "mimeType": "image/png",
+    "width": 1536,
+    "height": 2288,
+    "columns": 8,
+    "rows": 11,
+    "cellWidth": 192,
+    "cellHeight": 208,
+    "sha256": "9020bada674855f65703b5479595984bf71d6c185592047c6541ce192df57ded"
+  },
+  "states": [
+    {
+      "id": "idle",
+      "label": "待机",
+      "row": 0,
+      "frames": 6,
+      "durationsMs": [
+        280,
+        110,
+        110,
+        140,
+        140,
+        320
+      ],
+      "description": "平静站立、呼吸与眨眼。"
+    },
+    {
+      "id": "running-right",
+      "label": "向右飞行",
+      "row": 1,
+      "frames": 8,
+      "durationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ],
+      "description": "朝画面右侧轻轻扇翅飞行。"
+    },
+    {
+      "id": "running-left",
+      "label": "向左飞行",
+      "row": 2,
+      "frames": 8,
+      "durationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ],
+      "description": "朝画面左侧轻轻扇翅飞行。"
+    },
+    {
+      "id": "waving",
+      "label": "打招呼",
+      "row": 3,
+      "frames": 4,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        280
+      ],
+      "description": "抬手、张掌、挥动手腕并眨眼。"
+    },
+    {
+      "id": "jumping",
+      "label": "跳跃",
+      "row": 4,
+      "frames": 5,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        280
+      ],
+      "description": "下蹲、起跳、腾空、下降并落地。"
+    },
+    {
+      "id": "failed",
+      "label": "受挫",
+      "row": 5,
+      "frames": 8,
+      "durationsMs": [
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        140,
+        240
+      ],
+      "description": "低头、收拢翅膀后恢复。"
+    },
+    {
+      "id": "waiting",
+      "label": "等待回应",
+      "row": 6,
+      "frames": 6,
+      "durationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        260
+      ],
+      "description": "双手摊开、歪头，期待回应。"
+    },
+    {
+      "id": "running",
+      "label": "思考",
+      "row": 7,
+      "frames": 6,
+      "durationsMs": [
+        120,
+        120,
+        120,
+        120,
+        120,
+        220
+      ],
+      "description": "手托下巴、垂眼思索并收手；此状态表示处理或思考。"
+    },
+    {
+      "id": "review",
+      "label": "检查与点头",
+      "row": 8,
+      "frames": 6,
+      "durationsMs": [
+        150,
+        150,
+        150,
+        150,
+        150,
+        280
+      ],
+      "description": "正面俯身查看、轻轻点头并回正微笑。"
+    }
+  ],
+  "look": {
+    "angleOrigin": "up",
+    "angleDirection": "clockwise",
+    "neutralFrame": {
+      "row": 0,
+      "column": 0
+    },
+    "directions": [
+      {
+        "degrees": 0.0,
+        "row": 9,
+        "column": 0
+      },
+      {
+        "degrees": 22.5,
+        "row": 9,
+        "column": 1
+      },
+      {
+        "degrees": 45.0,
+        "row": 9,
+        "column": 2
+      },
+      {
+        "degrees": 67.5,
+        "row": 9,
+        "column": 3
+      },
+      {
+        "degrees": 90.0,
+        "row": 9,
+        "column": 4
+      },
+      {
+        "degrees": 112.5,
+        "row": 9,
+        "column": 5
+      },
+      {
+        "degrees": 135.0,
+        "row": 9,
+        "column": 6
+      },
+      {
+        "degrees": 157.5,
+        "row": 9,
+        "column": 7
+      },
+      {
+        "degrees": 180.0,
+        "row": 10,
+        "column": 0
+      },
+      {
+        "degrees": 202.5,
+        "row": 10,
+        "column": 1
+      },
+      {
+        "degrees": 225.0,
+        "row": 10,
+        "column": 2
+      },
+      {
+        "degrees": 247.5,
+        "row": 10,
+        "column": 3
+      },
+      {
+        "degrees": 270.0,
+        "row": 10,
+        "column": 4
+      },
+      {
+        "degrees": 292.5,
+        "row": 10,
+        "column": 5
+      },
+      {
+        "degrees": 315.0,
+        "row": 10,
+        "column": 6
+      },
+      {
+        "degrees": 337.5,
+        "row": 10,
+        "column": 7
+      }
+    ]
+  },
+  "preview": {
+    "src": "./preview.png",
+    "row": 3,
+    "column": 2
+  },
+  "videoPreview": {
+    "src": "./interaction-preview.mp4"
+  }
+}

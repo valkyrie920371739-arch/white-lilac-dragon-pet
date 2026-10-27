@@ -1,10 +1,22 @@
 # 可爱的gpt龙娘
 
-把白发紫瞳、白紫服装与菱形鳞尾的自定义形象放进一个可互动的网页。保留最新的动画图集，使用轻量的原生 HTML、CSS 与 JavaScript 播放。
+白紫龙娘的桌面宠物安装页与互动预览。保留白发紫瞳、白紫服装、菱形鳞尾及已有的九种动作和十六个看向方向。
 
-![可爱的gpt龙娘](assets/preview.png)
+![白紫龙娘](assets/preview.png)
 
-这是独立网页：打开部署后的链接即可互动。它不会修改 ChatGPT 客户端里的虚拟形象，也不需要 ChatGPT API、账户登录或服务密钥。
+**[打开安装与互动页](https://valkyrie920371739-arch.github.io/white-lilac-dragon-pet/)**
+
+## 一键安装到 ChatGPT 桌面端
+
+1. 在电脑上打开上面的网页，点击 **一键安装到 ChatGPT**。
+2. 浏览器询问时选择打开客户端，在客户端预览并确认安装。
+3. 选择白紫龙娘作为当前宠物；如果没有显示，到 **设置 → 宠物** 选择她，再输入 `/pet`。
+
+入口使用官方支持的 `codex://pets/install`，图集版本显式指定为 `2`，素材由本仓库提供。客户端保留安装确认，网页无法读取安装结果，因此点击按钮只提示打开请求，不宣称安装成功。支持情况取决于桌面端版本和工作区的宠物功能。见 [官方安装链接文档](https://learn.chatgpt.com/docs/reference/commands#pets) 与 [宠物使用说明](https://learn.chatgpt.com/docs/pets)。
+
+安装链接无法使用时，下载网页中的桌面宠物包，解压后把整个 `white-lilac-dragon` 文件夹放进 `~/.codex/pets/`（Windows 对应用户目录的 `.codex/pets/`），然后刷新客户端宠物列表。包内包含桌面清单 `pet.json` 和原始透明图集 `spritesheet.png`。每次构建都会从源码重新生成下载包，避免图集与包内容不同步。
+
+桌面端和 ChatGPT 网页端的宠物分别管理，不自动同步。本项目提供桌面宠物安装和独立网页预览；浏览器中的点击、双击和拖动属于预览交互，安装后的动作触发由客户端决定。项目不需要 ChatGPT API 或服务密钥。
 
 ## 能做什么
 
@@ -92,11 +104,14 @@ npm run preview -- --base=/demo/ --port=4173
 | `index.html` / `styles.css` | 中文界面与响应式布局 |
 | `src/app.js` | Canvas 播放器、鼠标、触摸和键盘交互 |
 | `src/animation.js` | 帧时序、视线方向与边界计算 |
+| `src/install.js` | 打开客户端后的操作提示，不读取或伪造安装结果 |
+| `desktop-pet.json` | 桌面宠物包的清单源文件，与网页动作清单分开 |
 | `assets/pet.json` | 动作、逐帧时长及 16 个视线方向 |
 | `assets/spritesheet.png` | 1536 × 2288 的透明图集，共 73 个有效帧 |
 | `assets/preview.png` | 形象静态预览 |
 | `assets/interaction-preview.mp4` | 四种互动动作的视频预览 |
 | `scripts/` | 本地服务、资源检查、构建和首次部署脚本 |
+| `dist/downloads/white-lilac-dragon-pet.zip` | 构建生成的桌面宠物包 |
 | `tests/` | 动画时间、方向及拖动边界测试 |
 | `.github/workflows/pages.yml` | 推送触发与手动触发的自动部署工作流 |
 | `docs/ASSETS.md` | 图集说明和资源来源 |
@@ -109,4 +124,3 @@ npm run preview -- --base=/demo/ --port=4173
 替换形象时，需要同步更新图集与 `assets/pet.json` 的尺寸、帧布局和校验值，再运行检查。不要只替换图片而沿用不匹配的清单。开发资料和原始工作档案不属于网站发布内容。
 
 项目目前没有指定统一的开源许可证，也未替角色素材授予额外的再分发或商业许可。发布前可按自己的意愿补充代码与素材的授权说明。
-

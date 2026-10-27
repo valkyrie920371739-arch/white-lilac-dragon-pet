@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f2fb" />
+    <meta name="description" content="预览白紫龙娘的互动动作，一键打开 ChatGPT 桌面端安装，换上你的专属动态伙伴。" />
+    <title>白紫龙娘 · 安装与互动</title>
+    <link rel="icon" href="./assets/preview.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <noscript><style>
+      .intro-description,.stage-hint,.stage-bottomline,.loading,.stage-toolbar,.controls-panel{display:none!important}
+      .workspace{display:block}
+      .pet:disabled{opacity:1;cursor:default;touch-action:auto}
+    </style></noscript>
+    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/install.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#stage" aria-label="前往白紫龙娘互动舞台">
+          <span class="brand-mark" aria-hidden="true">✧</span>
+          <span class="brand-name">白紫龙娘</span>
+        </a>
+        <a class="edition" href="#install">安装到 ChatGPT</a>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true"></span> 一点小小的陪伴</p>
+            <h1 id="page-title">让她陪你一起工作。</h1>
+            <p class="intro-description">先和她打个招呼，再把她带到 ChatGPT。<br class="mobile-break" />白发、紫瞳，还有熟悉的卷卷龙尾。</p>
+          </div>
+          <div class="intro-note" aria-hidden="true">
+            <span class="note-line"></span>
+            <p>白发、紫瞳，<br />还有一条卷起来的龙尾。</p>
+          </div>
+        </section>
+
+        <section id="install" class="install-panel" aria-labelledby="install-title">
+          <div class="install-copy">
+            <p class="section-kicker">你的桌面伙伴</p>
+            <h2 id="install-title">把白紫龙娘带回去</h2>
+            <p>适用于支持宠物功能的 ChatGPT 桌面端（macOS / Windows）。点击后在客户端预览并安装，再选择她作为当前宠物。</p>
+          </div>
+          <div class="install-actions">
+            <a id="install-button" class="button button-primary install-button" href="codex://pets/install?name=%E7%99%BD%E7%B4%AB%E9%BE%99%E5%A8%98%C2%B7%E7%AE%80%E7%BA%A6%E7%89%88&amp;imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2Fvalkyrie920371739-arch%2Fwhite-lilac-dragon-pet%2Fmain%2Fassets%2Fspritesheet.png&amp;description=%E7%99%BD%E5%8F%91%E7%B4%AB%E7%9E%B3%E7%9A%84%E9%BE%99%E5%A8%98%EF%BC%8C%E4%B9%9D%E7%A7%8D%E5%8A%A8%E4%BD%9C%E4%B8%8E%E5%8D%81%E5%85%AD%E4%B8%AA%E7%9C%8B%E5%90%91%E6%96%B9%E5%90%91%E3%80%82&amp;spriteVersionNumber=2">一键安装到 ChatGPT <span aria-hidden="true">↗</span></a>
+            <a class="install-download" href="./downloads/white-lilac-dragon-pet.zip" download>下载桌面宠物包</a>
+          </div>
+          <p id="install-status" class="install-status" role="status" aria-live="polite">安装入口会打开客户端，由你确认安装。</p>
+          <details class="install-help">
+            <summary>没有打开客户端，或安装后没有显示？</summary>
+            <ol>
+              <li>先安装或更新 ChatGPT 桌面端，再点击安装按钮；浏览器询问时选择打开 ChatGPT。</li>
+              <li>在客户端完成安装后，到「设置 → 宠物」选择白紫龙娘；输入 <code>/pet</code> 显示桌面伙伴。</li>
+              <li>如果链接不可用，下载并解压桌面宠物包，将整个 <code>white-lilac-dragon</code> 文件夹放到用户目录下的 <code>.codex/pets/</code>，再刷新宠物列表。</li>
+            </ol>
+            <p>此入口安装桌面动态宠物。网页端的宠物需要在网页设置中另行选择或上传；桌面安装不会自动同步到网页端。</p>
+            <a href="https://learn.chatgpt.com/docs/pets" target="_blank" rel="noopener noreferrer">查看官方宠物使用说明 ↗</a>
+          </details>
+        </section>
+
+        <div class="workspace">
+          <section class="stage-panel" aria-label="角色互动区">
+            <div id="stage" class="stage" aria-label="白紫龙娘的互动舞台" aria-busy="false">
+              <div class="stage-topline">
+                <span class="stage-title">她的小小空间</span>
+                <span class="stage-hint"><span class="drag-icon" aria-hidden="true">↔</span> 可以拖动</span>
+              </div>
+              <div class="stage-ring stage-ring-one" aria-hidden="true"></div>
+              <div class="stage-ring stage-ring-two" aria-hidden="true"></div>
+              <button id="pet-button" class="pet" type="button" disabled aria-label="白紫龙娘。单击打招呼，双击跳跃；聚焦后可用方向键移动，空格跳跃。" aria-describedby="keyboard-help">
+                <img id="pet-fallback" src="./assets/preview.png" alt="白发紫瞳、身着白紫服装的龙娘" width="192" height="208" draggable="false" />
+                <canvas id="pet-canvas" width="192" height="208" aria-hidden="true" hidden></canvas>
+              </button>
+              <p id="loading" class="loading" role="status">正在准备她的动作…</p>
+              <div id="error-panel" class="error-panel" role="alert" hidden>
+                <strong>暂时没有见到她</strong>
+                <p id="error-message">形象资源未能加载，请重试。</p>
+                <button id="retry-button" class="button button-primary" type="button">重新加载</button>
+              </div>
+              <div class="stage-bottomline" aria-hidden="true">
+                <span>点击 · 挥手</span><span class="hint-divider"></span><span>双击 · 跳跃</span>
+              </div>
+            </div>
+            <div class="stage-toolbar">
+              <span id="playback-status" class="playback-status"><span class="status-dot" aria-hidden="true"></span><span id="playback-text">正在加载</span></span>
+              <div class="toolbar-buttons">
+                <button id="reset-button" class="text-button" type="button" disabled>回到中央</button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button id="pause-button" class="text-button" type="button" aria-pressed="false" disabled><span id="pause-text">暂停动画</span></button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="controls-panel" aria-labelledby="controls-title">
+            <div class="controls-heading"><span class="section-kicker">互动</span><h2 id="controls-title">选择一个回应</h2></div>
+            <div id="action-buttons" class="action-grid" aria-label="角色动作选择"></div>
+            <div class="current-state">
+              <span class="state-orb" aria-hidden="true">✧</span>
+              <div><p class="current-state-label">现在的她</p><p id="state-label" class="state-name" aria-live="polite">正在加载</p><p id="state-description" class="state-description">稍等一下，就可以打招呼了。</p></div>
+            </div>
+            <div class="settings">
+              <label class="setting-row" for="follow-toggle"><span><strong>跟随鼠标</strong><small>待机时看向你的指针</small></span><input id="follow-toggle" type="checkbox" role="switch" checked /><span class="switch-track" aria-hidden="true"></span></label>
+              <label class="setting-row" for="motion-toggle"><span><strong>减少动态</strong><small>静态展示，仍可选择表情</small></span><input id="motion-toggle" type="checkbox" role="switch" /><span class="switch-track" aria-hidden="true"></span></label>
+            </div>
+            <details class="interaction-help">
+              <summary>键盘与操作说明 <span aria-hidden="true">+</span></summary>
+              <ul id="keyboard-help">
+                <li>点一下她打招呼，快速点两下跳跃。</li>
+                <li>按住并拖动，她会随移动方向扇翅。</li>
+                <li>聚焦角色后，方向键移动，Enter 打招呼，空格跳跃，Home 回到中央，Esc 回到待机。</li>
+                <li>选择持续动作后，点击“待机”恢复鼠标跟随。</li>
+                <li>开启减少动态后，动作以静态姿势显示。</li>
+              </ul>
+            </details>
+          </aside>
+        </div>
+
+        <noscript><div class="no-script">当前浏览器关闭了 JavaScript。可以查看角色静帧；开启 JavaScript 后即可使用互动。</div></noscript>
+      </main>
+
+      <footer class="site-footer"><span>白紫龙娘 · 简约版</span><p>预览动作在浏览器内播放，客户端通过官方入口安装。</p><a href="./assets/spritesheet.png" download="white-lilac-dragon-spritesheet.png">下载原始图集 <span aria-hidden="true">↗</span></a></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "atlasSha256": "9020bada674855f65703b5479595984bf71d6c185592047c6541ce192df57ded",
+  "format": "PNG",
+  "mode": "RGBA",
+  "width": 1536,
+  "height": 2288,
+  "encodedBytes": 2692965,
+  "populatedCells": 73,
+  "transparentUnusedCells": 15,
+  "structuralValidationPassed": true,
+  "structuralErrors": [],
+  "structuralWarnings": [],
+  "qualityGatePassed": true,
+  "qualityErrors": [],
+  "reviewedQualityWarnings": [
+    "look direction 022.5 accepted with a reviewed warning",
+    "look direction 112.5 accepted with a reviewed warning",
+    "look direction 157.5 accepted with a reviewed warning",
+    "look direction 247.5 accepted with a reviewed warning",
+    "look direction 337.5 accepted with a reviewed warning",
+    "157.5->180 diff is a local outlier (2316 pixels vs neighbor average 1418)"
+  ],
+  "enhancedStateVisualReview": "passed",
+  "jumpLiftPixels": 37,
+  "landingBaselineDeltaPixels": 1,
+  "maximumLookCenterDriftPixels": 4.5
+}

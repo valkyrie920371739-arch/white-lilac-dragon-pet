@@ -1,0 +1,16 @@
+{
+  "name": "white-lilac-dragon-pet",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "白紫龙娘的一键桌面安装、网页互动预览与自动部署。",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/validate-assets.mjs && node --check src/app.js && node --check src/install.js && node --check src/animation.js && node --check scripts/deploy.mjs && node --check scripts/build.mjs && node --check scripts/serve.mjs && node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "deploy": "node scripts/deploy.mjs"
+  }
+}
