@@ -12,7 +12,7 @@
 2. 浏览器询问时选择打开客户端，在客户端预览并确认安装。
 3. 选择白紫龙娘作为当前宠物；如果没有显示，到 **设置 → 宠物** 选择她，再输入 `/pet`。
 
-入口使用官方支持的 `codex://pets/install`，图集版本显式指定为 `2`，素材由本仓库提供。客户端保留安装确认，网页无法读取安装结果，因此点击按钮只提示打开请求，不宣称安装成功。支持情况取决于桌面端版本和工作区的宠物功能。见 [官方安装链接文档](https://learn.chatgpt.com/docs/reference/commands#pets) 与 [宠物使用说明](https://learn.chatgpt.com/docs/pets)。
+入口使用官方支持的 `codex://pets/install`，图集版本显式指定为 `2`，素材由本项目的 HTTPS 网站提供。客户端保留安装确认，网页无法读取安装结果，因此点击按钮只提示打开请求，不宣称安装成功。支持情况取决于桌面端版本和工作区的宠物功能。见 [官方安装链接文档](https://learn.chatgpt.com/docs/reference/commands#pets) 与 [宠物使用说明](https://learn.chatgpt.com/docs/pets)。
 
 安装链接无法使用时，下载网页中的桌面宠物包，解压后把整个 `white-lilac-dragon` 文件夹放进 `~/.codex/pets/`（Windows 对应用户目录的 `.codex/pets/`），然后刷新客户端宠物列表。包内包含桌面清单 `pet.json` 和原始透明图集 `spritesheet.png`。每次构建都会从源码重新生成下载包，避免图集与包内容不同步。
 

@@ -20,6 +20,6 @@ test('desktop install link targets the shipped atlas with the matching version a
   assert.equal(link.searchParams.get('description'), pet.description);
   assert.equal(Number(link.searchParams.get('spriteVersionNumber')), asset.spriteVersion);
   assert.equal(pet.spriteVersionNumber, asset.spriteVersion);
-  assert.equal(link.searchParams.get('imageUrl'), `https://raw.githubusercontent.com/valkyrie920371739-arch/white-lilac-dragon-pet/main/assets/${pet.spritesheetPath}`);
+  assert.equal(link.searchParams.get('imageUrl'), `https://valkyrie920371739-arch.github.io/white-lilac-dragon-pet/assets/${pet.spritesheetPath}`);
   assert.equal(pet.spritesheetPath, asset.sprite.src.slice(2));
 });

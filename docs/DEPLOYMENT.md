@@ -2,7 +2,7 @@
 
 项目提供 `.github/workflows/pages.yml`。它先检查项目、构建 `dist/`，再把构建结果部署到 GitHub Pages。更新 `main` 分支会自动发布；也可以在 GitHub 的 Actions 页面手动运行。部署使用 GitHub 自动提供的令牌，不需要填写个人访问令牌或云服务密钥。
 
-构建还会生成 `dist/downloads/white-lilac-dragon-pet.zip` 桌面宠物包。网页中的安装链接使用本仓库 `main` 分支的 HTTPS 原始图集地址，并显式传入 `spriteVersionNumber=2`。如果派生到其他仓库，需要同时更新 `index.html` 的安装链接、README 中的站点地址及 `tests/install.test.mjs` 的预期地址。`npm run check` 会检查安装链接与图集清单是否一致。
+构建还会生成 `dist/downloads/white-lilac-dragon-pet.zip` 桌面宠物包。网页中的安装链接使用本项目 GitHub Pages 网站的 HTTPS 图集地址，并显式传入 `spriteVersionNumber=2`。如果派生到其他仓库，需要同时更新 `index.html` 的安装链接、README 中的站点地址及 `tests/install.test.mjs` 的预期地址。`npm run check` 会检查安装链接与图集清单是否一致。
 
 ## 一键配置与部署
 
